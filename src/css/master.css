@@ -1,0 +1,519 @@
+@font-face {
+    font-family: main;
+    src: url(../font/Handlee-Regular.ttf);
+}
+
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+
+main{
+    background-image: url(../img/background.svg);
+    background-repeat: repeat;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow-x: hidden;
+    >section{
+        width: 430px;
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        >.topPart{
+            width: 100%;
+            height: 150px;
+            /* border: 1px solid green; */
+            display: flex;
+            >*{
+                height: 100%;
+                width: 50%;
+                /* border: 1px solid red; */
+            }
+            >.myCode{
+                padding-left: 50px;
+                padding-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: start;
+                >div{
+                    width: 100%;
+                    height: fit-content;
+                    &:nth-of-type(1){
+                        >span{
+                            font-family: main;
+                            font-size: 16px;
+                            color: #484a4a;
+                            >span{
+                                color: #479d91;
+                            }
+                        }
+                    }
+                    &:nth-of-type(2){
+                        display: flex;
+                        margin-top: 10px;
+                        >a{
+                            margin-left: 10px;
+                            &:nth-of-type(1){
+                                margin-left: 0px;  
+                            }
+                            >i{
+                                font-size: 20px;
+                                color: #484a4a;
+                                transition: .5s;
+                                &:hover{
+                                    color: #479d91;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            >.note{
+                padding-top: 10px;
+                padding-right: 10px;
+                display: flex;
+                justify-content: end;
+                >span{
+                    font-family: main;
+                    font-size: 16px;
+                    color: #FF3333;
+                    text-decoration: underline;
+                }
+            }
+        }
+        >.bottomPart{
+            width: 100%;
+            height: calc(100% - 150px);
+            background-color: rgb(255,255,255);
+            background-image: repeating-linear-gradient(0deg, rgb(0, 224, 194), rgb(0, 224, 194) 1px, rgb(255, 255, 255) 1px, rgb(255, 255, 255));
+            background-size: 20px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: start;
+            margin-left: 20px;
+            /* border: 1px solid blue; */
+            >.header{
+                width: 100%;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                align-content: center;
+                /* border: 1px solid red; */
+                >.title{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    /* border: 1px solid blue; */
+                    >h1{
+                        font-family: main;
+                        color: #6A6F76;
+                        font-size: 40px;
+                        font-weight: bolder;
+                        text-align: center;
+                        position: relative;
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            width: 70%;
+                            left: 15%;
+                            bottom: 0%;
+                            height: 5px;
+                            background-color: #33E6CE;
+                        }
+                    }
+                }
+                >.status{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 15px;
+                    /* border: 1px solid blue; */
+                    >*{
+                        font-family: main;
+                        color: #6A6F76;
+                        font-size: 15px;
+                        margin-right: 5px;
+                        font-weight: bolder;
+                    }
+                }
+            }
+            >.input{
+                width: 100%;
+                height: 100px;
+                /* border: 1px solid red; */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                >div{
+                    width: calc(70% + 40px);
+                    display: flex;
+                    justify-content: center;
+                    >input{
+                        padding: 10px;
+                        width: calc(100% - 40px);
+                        border: none;
+                        border-bottom: 2px solid #33E6CE;
+                        background-color: transparent;
+                        font-family: main;
+                        font-size: 16px;
+                        color: #232323;
+                        &::placeholder{
+                            font-family: main;
+                            font-size: 16px;
+                            color: #353637;
+                            text-transform: capitalize;
+                        }
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                    >i{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 40px;
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        color: #6A6F76;
+                        background-color: #33E6CE;
+                        font-size: 15px;
+                        cursor: pointer;
+                        transition: .3s;
+                        &:hover{
+                            background-color: #6A6F76;
+                            color: #33E6CE;
+                        }
+    
+                    }
+                }
+            }
+            >.todolist{
+                width: 100%;
+                /* border: 1px solid red; */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 50px;
+                >div{
+                    width: calc(70% + 40px);
+                    display: flex;
+                    flex-wrap: wrap;
+                    >.todoHeader{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-around;
+                        position: relative;
+                        padding-block: 10px;
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            width: 90%;
+                            left: 5%;
+                            bottom: 0;
+                            height: 2px;
+                            background-color: black;
+                        }
+                        >.num{
+                            width: 20%;
+                            display: flex;
+                            justify-content: center;
+                            font-family: main;
+                            color: #717577;
+                            font-size: 16px;
+                            font-weight: bolder;
+                        }
+                        >.task{
+                            width: 20%;
+                            display: flex;
+                            justify-content: center;
+                            font-family: main;
+                            color: #717577;
+                            font-size: 16px;
+                            font-weight: bolder;
+                        }
+                        >.others{
+                            width: 60%;
+                            display: flex;
+                            *{
+
+                                font-family: main;
+                                color: #717577;
+                                font-size: 16px;
+                                font-weight: bolder;
+                            }
+                            >.date{
+                                width: 33.33333%;
+                                display: flex;
+                                justify-content: center;
+                            }
+                            >.tick{
+                                width: 33.33333%;
+                                display: flex;
+                                justify-content: center;
+                            }
+                            >.delete{
+                                width: 33.33333%;
+                                display: flex;
+                                justify-content: center;
+                            }
+                        }
+                    }
+                    >ul{
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        >li{
+                            width: 100%;
+                            display: flex;
+                            padding-block: 10px;
+                            justify-content: space-around;
+                            >.num{
+                                width: 20%;
+                                display: flex;
+                                justify-content: center;
+                                color: #5a5e5e;
+                                font-family: main;
+                                font-size: 16px;
+                                font-weight: bolder;
+                            }
+                            >.task{
+                                width: 20%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-family: main;
+                                color: #5a5e5e;
+                                font-size: 16px;
+                                font-weight: bolder;
+                                overflow: hidden;
+                                cursor: pointer;
+                                position: relative;
+                                >.value{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                >input{
+                                    width: 50%;
+                                    background-color: transparent;
+                                    border: none;
+                                    outline: none;
+                                    border-bottom: 2px solid #33E6CE;
+                                    text-align: center;
+                                    color: #5a5e5e;
+                                    font-family: main;
+                                    font-size: 16px;
+                                }
+                                >button{
+                                    border: 1px solid green;
+                                    background-color: transparent;
+                                    width: 15px;
+                                    height: 15px;
+                                    border-radius: 3px;
+                                    margin-left: 5px;
+                                    cursor: pointer;
+                                    >i{
+                                        width: 100%;
+                                        height: 100%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        font-size: 10px;
+                                        color: green;
+                                    }
+                                }
+                            }
+                            >.others{
+                                width: 60%;
+                                display: flex;
+                                *{
+                                    color: #5a5e5e;
+                                    font-size: 16px;
+                                    font-weight: bolder;
+                                }
+                                >.date{
+                                    width: 33.33333%;
+                                    display: flex;
+                                    justify-content: center;
+                                    font-family: main;
+                                }
+                                >.tick{
+                                    width: 33.33333%;
+                                    display: flex;
+                                    justify-content: center;
+                                    >i{
+                                        cursor: pointer;
+                                        width: 16px;
+                                        height: 16px;
+                                        font-size: 10px;
+                                        padding: 1px;
+                                        padding-right: .8px;
+                                        border: 2px solid #717577;
+                                        border-radius: 2px;
+                                        text-align: center;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        transition: .5s;
+                                        &:hover{
+                                            border: 2px solid #33E6CE;
+                                            color: #33E6CE;
+                                        }
+                                    }
+                                    >.clickedhover{
+                                        background-color: #33E6CE;
+                                        color: white;
+                                        border: none;
+                                        &:hover{
+                                            background-color: #5a5e5e;
+                                            color: white;
+                                            border: none;
+                                        }
+                                    }
+                                }
+                                >.delete{
+                                    width: 33.33333%;
+                                    display: flex;
+                                    justify-content: center;
+                                    >i{
+                                        height: fit-content;
+                                        cursor: pointer;
+                                        &:hover{
+                                            animation: trashbin .4s ease-in-out infinite;
+                                            color: #FF3333;
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        >.holes{
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 0;
+            width: 35px;
+            /* border: 1px solid red; */
+            background-image: url(../img/dots.svg);
+            background-size: contain;
+            background-repeat: repeat;
+        }
+    }
+}
+
+
+
+@keyframes trashbin {
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(20deg);}
+    50%{transform: rotate(0deg);}
+    75%{transform: rotate(-20deg);}
+    100%{transform: rotate(0deg);}
+}
+
+
+@keyframes error {
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(20deg);}
+    50%{transform: rotate(0deg);}
+    75%{transform: rotate(-20deg);}
+    100%{transform: rotate(0deg);}
+
+
+}
+
+
+
+
+@media screen and (min-width:640px) {
+    main{
+        >section{
+            width: 540px;
+            >.holes{
+                width: 40px;
+            }
+            >.topPart{
+                >.myCode{
+                    >div{
+                        &:nth-of-type(1){
+                            >span{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+                >.note{
+                    >span{
+                        font-size: 20px;
+                    }
+                }
+            }
+            >.bottomPart{
+                >.todolist{
+                    >div{
+                        >.todoHeader{
+                                >.num{
+                                    width: 10%;
+                                }
+                                >.task{
+                                    width: 15%;
+                                }
+                                >.others{
+                                    width: 40%;
+                                }
+                        }
+                        >ul{
+                            >li{
+                                >.num{
+                                    width: 10%;
+                                }
+                                >.task{
+                                    width: 25%;
+                                    >input{
+                                        width: 90%;
+                                    }
+                                }
+                                >.others{
+                                    width: 40%;
+                                }  
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:768px) {
+    main{
+        >section{
+            width: 650px;
+        }
+    }
+
+}
+@media screen and (min-width:1024px) {
+    main{
+        >section{
+            width: 700px;
+        }
+    }
+}
+@media screen and (min-width:1280px) {
+    main{
+        >section{
+            width: 750px;
+        }
+    }
+}
